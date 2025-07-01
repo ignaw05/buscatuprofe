@@ -23,16 +23,45 @@
     <section>
         <h2>¿Cómo funciona?</h2>
         <ol>
-            <li>Buscá el profe que necesites.</li>
-            <li>Contactalo por WhatsApp.</li>
+            <li>Buscá la clase que necesites.</li>
+            <li>Contacta a tu profe por WhatsApp.</li>
             <li>¡Listo! Comenzá a aprender.</li>
         </ol>
     </section>
     <section>
         <form action="">
-            <label for="search">Materia:</label>
-            <input required type="text" id="search" name="search" placeholder="Ej: Física">
-            <button type="submit">Buscar</button>
+            <fieldset>
+                <legend>Buscar clase</legend>
+                <label for="materia">Materia:</label>
+                <input required type="text" id="materia" name="materia" placeholder="Ej: Física" size="30">
+
+                <label for="provincia">Provincia:</label>
+                <select name="provincia" id="provincia">
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="CABA">Ciudad Autónoma de Buenos Aires</option>
+                    <option value="Catamarca">Catamarca</option>
+                    <option value="Chaco">Chaco</option>
+                    <option value="Chubut">Chubut</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Corrientes">Corrientes</option>
+                    <option value="Entre Ríos">Entre Ríos</option>
+                    <option value="Formosa">Formosa</option>
+                    <option value="Jujuy">Jujuy</option>
+                    <option value="La Pampa">La Pampa</option>
+                    <option value="La Rioja">La Rioja</option>
+                    <option selected value="Mendoza">Mendoza</option>
+                    <option value="Misiones">Misiones</option>
+                    <option value="Neuquén">Neuquén</option>
+                </select>
+
+                <label for="presencial">Presencial</label>
+                <input type="checkbox" id="presencial" name="mod" checked value="presencial">
+
+                <label for="virtual">Virtual</label>
+                <input type="checkbox" id="virtual" name="mod" value="virtual">
+
+                <button type="submit">Buscar</button>
+            </fieldset>
         </form>
     </section>
     
