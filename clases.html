@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"/>
     <title>Ver Clases</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
         <h1>Clases</h1>
         <p>Selecciona la clase que desees, y contacta al profesor directamente.</p>
         <form action="">
-            <fieldset>
+            <fieldset id="fieldset">
                 <legend>Buscar clase</legend>
                 <label for="materia">Materia:</label>
                 <input required type="text" id="materia" name="materia" placeholder="Ej: Física" size="30">
@@ -57,16 +58,20 @@
     <section>
         <h3>Resultados de la busqueda:</h3>
         <ul>
-            <li>
+            <li class="clase">
                 <h4>Física - Presencial</h4>
                 <p>Profesor: Juan Pérez</p>
                 <p>Provincia: Mendoza</p>
+                <p>$8.000</p>
+                <p>Duracion: 1 hora 30 min</p>
                 <a href="https://wa.me/5492612345678" target="_blank">Contactar por WhatsApp</a>
             </li>
-            <li>
+            <li class="clase">
                 <h4>Matemáticas - Virtual</h4>
                 <p>Profesora: Ana Gómez</p>
                 <p>Provincia: Mendoza</p>
+                <p>$10.000</p>
+                <p>Duracion: 1 hora</p>
                 <a href="https://wa.me/5492612345678" target="_blank">Contactar por WhatsApp</a>
             </li>
     </section>

@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+h1,h2,h3 {
+    text-align: center;
+}
+#fieldset {
+    margin: 20px;
+    padding: 30px;
+    border: 0.5px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.clase {
+    margin: 20px;
+    padding: 10px;
+    border: 0.5px solid #ccc;
+    border-radius: 5px;
+    background-color: lightblue;
+    max-width: 200px;
+}
+hr{
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+a {
+    color: purple;
+    text-decoration: none;
+}
+a:hover {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+h4 {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
+}
