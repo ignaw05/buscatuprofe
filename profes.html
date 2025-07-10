@@ -20,7 +20,7 @@
 
     <section class="professor-panel">
         <div class="panel-header">
-            <h1>Mis Clases</h1>
+            <h1 style="color: white">Mis Clases</h1>
             <h2>Prof. Ignacio W.</h2>
         </div>
 
@@ -28,7 +28,7 @@
             <div class="classes-section">
                 <div class="section-header">
                     <h3>Clases Registradas</h3>
-                    <button class="btn-add-class" onclick="showAddClassForm()">
+                    <button class="btn-add-class">
                         <i class="fa fa-plus"></i>
                         Añadir Clase
                     </button>
@@ -42,7 +42,36 @@
     </section>
 
     <!-- Modal para añadir clase -->
+     <section class="modal-container">
+        <div class="modal">
+            <button id="cerrar-modal" class="btn-close">Cerrar</button>
+            <h3>Añadir clase</h3>
+            <form id="agregarClase">
+                <label for="materia">Materia</label>
+                <input id="matInp" type="text" placeholder="Ej: Física" required />
 
-    <script src="./scripts/scriptProfes.js"></script>
+                <label for="precio">Precio</label>
+                <input id="priceInp" type="number" placeholder="Ej: 12500" required />
+
+                <label for="descripcion">Descripcion (Max 50 caracteres)</label>
+                <input id="descInp" type="text" placeholder="Ej: Profe de la UTN. Clases para ingreso" maxlength="50">
+
+                <label for="duracion">Duración de la clase</label>
+                <select id="duracion"></select>
+
+                <input type="checkbox" id="presencial" class="checkMod" checked/>
+                <label for="presencial">👥 Presencial</label>
+                
+                <input type="checkbox" id="virtual" class="checkMod" />
+                <label for="virtual">💻 Virtual</label>
+
+                <button class="btn" id="btn-guardar" type="submit">Guardar clase</button>
+            </form>
+         </div>
+     </section>
+
+
+
 </body>
 </html> 
+<script src="./scripts/scriptProfes.js"></script>
