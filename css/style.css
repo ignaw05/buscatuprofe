@@ -201,8 +201,6 @@ nav a:hover {
   text-shadow: none;
 }
 
-
-
 /* Features Section */
 .features {
   padding: 5rem 0;
@@ -291,11 +289,21 @@ nav a:hover {
   min-height: 100vh;
 }
 
-/* Main Content */
+/* Main Content - FIXED SPACING */
 section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+/* Specific spacing fix for search and results sections */
+section:has(form) {
+  padding-bottom: 1rem; /* Reduced from 2rem */
+}
+
+section#resultados {
+  padding-top: 1rem; /* Reduced from 2rem */
+  margin-top: 0; /* Remove any top margin */
 }
 
 h1 {
@@ -319,7 +327,7 @@ form {
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: var(--shadow-lg);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* Reduced from 2rem */
 }
 
 fieldset {
@@ -490,6 +498,7 @@ button:active {
 
 /* Input and Select Enhanced Styles */
 input[type="text"],
+input[type="number"],
 select {
   width: 100%;
   padding: 0.875rem 1.25rem;
@@ -502,6 +511,7 @@ select {
 }
 
 input[type="text"]:focus,
+input[type="number"]:focus,
 select:focus {
   outline: none;
   border-color: var(--primary-purple);
@@ -514,16 +524,12 @@ input[type="text"]::placeholder {
   font-style: italic;
 }
 
-/* Checkbox Styles */
-
-/* Button Styles */
-
-/* Results Section */
+/* Results Section - FIXED SPACING */
 #resultados {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 0; /* Removed margin-top */
 }
 
 #resultados > p {
@@ -595,6 +601,12 @@ input[type="text"]::placeholder {
 .price-period {
   font-size: 0.8rem;
   color: var(--text-light);
+}
+
+.clase-description {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  line-height: 1.5;
 }
 
 .clase-details {
@@ -683,11 +695,19 @@ input[type="text"]::placeholder {
     padding: 1rem;
   }
 
+  section:has(form) {
+    padding-bottom: 0.5rem;
+  }
+
+  section#resultados {
+    padding-top: 0.5rem;
+  }
+
   h1 {
     font-size: 2rem;
   }
 
-  fieldset {
+  .form-row {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
@@ -1077,21 +1097,34 @@ select:focus,
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
   align-items: center;
   justify-content: center;
+  animation: fadeIn 0.3s ease;
 }
 
 .modal {
-  background-color: white;
+  background: var(--white);
+  border-radius: 1rem;
   padding: 2rem;
-  border-radius: 8px;
   width: 90%;
-  max-width: 400px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   position: relative;
+  animation: modalSlideIn 0.3s ease;
 }
-  
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 @keyframes modalSlideIn {
   from {
@@ -1104,11 +1137,58 @@ select:focus,
   }
 }
 
-/* Form Styles */
+.modal h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-purple);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Close Button Styles */
+.btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.btn-close:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Form Styles inside Modal */
 #agregarClase {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+#agregarClase .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+#agregarClase label {
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
 }
 
 #agregarClase input,
@@ -1133,7 +1213,33 @@ select:focus,
   color: var(--text-light);
 }
 
-#agregarClase button[type="submit"] {
+#agregarClase .checkbox-group {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+#agregarClase .checkbox-group-title {
+  font-weight: 600;
+  color: var(--dark-purple);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+#agregarClase .checkbox-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#agregarClase .checkMod + label {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  min-width: auto;
+}
+
+#btn-guardar {
   background: linear-gradient(135deg, var(--primary-purple) 0%, var(--dark-purple) 100%);
   color: var(--white);
   border: none;
@@ -1144,9 +1250,10 @@ select:focus,
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }
 
-#agregarClase button[type="submit"]:hover {
+#btn-guardar:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
 }
@@ -1213,7 +1320,7 @@ select:focus,
     grid-template-columns: 1fr;
   }
 
-  .modal-content {
+  .modal {
     margin: 1rem;
     padding: 1.5rem;
   }
@@ -1231,7 +1338,6 @@ select:focus,
   }
 }
 
-
 @media (max-width: 480px) {
   .panel-header h1 {
     font-size: 1.75rem;
@@ -1243,25 +1349,19 @@ select:focus,
 
   .professor-class-card {
     padding: 1rem;
-    border: 2px solid var(--primary-purple);
-    border-radius: 1rem;
-}
   }
 
+  .modal {
+    padding: 1rem;
+  }
 
-/* Close Button Styles */
-.btn-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 1rem 1rem;
-  border-radius: 0.25rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
+  #agregarClase .checkbox-options {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #agregarClase .checkMod + label {
+    width: 100%;
+    justify-content: center;
+  }
 }
-
-

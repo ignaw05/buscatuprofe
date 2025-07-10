@@ -42,29 +42,39 @@
     </section>
 
     <!-- Modal para añadir clase -->
-    <section class="modal-container">
+    <div class="modal-container">
         <div class="modal">
-            <button id="cerrar-modal" class="btn-close">Cerrar</button>
+            <button id="cerrar-modal" class="btn-close">
+                <i class="fa fa-times"></i>
+            </button>
             <h3>Añadir clase</h3>
             <form id="agregarClase">
-                <label for="materia">Materia</label>
-                <input id="matInp" type="text" placeholder="Ej: Física" required />
+                <div class="form-group">
+                    <label for="matInp">Materia</label>
+                    <input id="matInp" type="text" placeholder="Ej: Física" required />
+                </div>
 
-                <label for="precio">Precio</label>
-                <input id="priceInp" type="number" placeholder="Ej: 12500" required />
+                <div class="form-group">
+                    <label for="priceInp">Precio</label>
+                    <input id="priceInp" type="number" placeholder="Ej: 12500" required />
+                </div>
 
-                <label for="descripcion">Descripcion (Max 50 caracteres)</label>
-                <input id="descInp" type="text" placeholder="Ej: Profe de la UTN. Clases para ingreso" maxlength="50">
+                <div class="form-group">
+                    <label for="descInp">Descripción (Max 50 caracteres)</label>
+                    <input id="descInp" type="text" placeholder="Ej: Profe de la UTN. Clases para ingreso" maxlength="50">
+                </div>
 
-                <label for="duracion">Duración de la clase</label>
-                <select id="duracion">
-                    <option value="30">30 minutos</option>
-                    <option value="45">45 minutos</option>
-                    <option value="60" selected>1 hora</option>
-                    <option value="75">1 hora 15 minutos</option>
-                    <option value="90">1 hora 30 minutos</option>
-                    <option value="120">2 horas</option>
-                </select>
+                <div class="form-group">
+                    <label for="duracion">Duración de la clase</label>
+                    <select id="duracion">
+                        <option value="30">30 minutos</option>
+                        <option value="45">45 minutos</option>
+                        <option value="60" selected>1 hora</option>
+                        <option value="75">1 hora 15 minutos</option>
+                        <option value="90">1 hora 30 minutos</option>
+                        <option value="120">2 horas</option>
+                    </select>
+                </div>
 
                 <div class="checkbox-group">
                     <div class="checkbox-group-title">Modalidad de clase</div>
@@ -80,7 +90,7 @@
                 <button class="btn" id="btn-guardar" type="button">Guardar clase</button>
             </form>
         </div>
-    </section>
+    </div>
 
     <script src="./scripts/scriptProfes.js"></script>
 </body>
