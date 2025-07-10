@@ -1231,6 +1231,7 @@ select:focus,
   }
 }
 
+
 @media (max-width: 480px) {
   .panel-header h1 {
     font-size: 1.75rem;
@@ -1242,8 +1243,11 @@ select:focus,
 
   .professor-class-card {
     padding: 1rem;
-  }
+    border: 2px solid var(--primary-purple);
+    border-radius: 1rem;
 }
+  }
+
 
 /* Close Button Styles */
 .btn-close {
@@ -1259,3 +1263,5 @@ select:focus,
   font-weight: 600;
   cursor: pointer;
 }
+
+

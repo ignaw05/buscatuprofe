@@ -34,15 +34,15 @@
                     </button>
                 </div>
 
-                <div class="classes-grid" id="professor-classes">
+                <section class="clase" id="professor-classes">
                     <!-- Las clases se cargarán dinámicamente aquí -->
-                </div>
+                </section>
             </div>
         </div>
     </section>
 
     <!-- Modal para añadir clase -->
-     <section class="modal-container">
+    <section class="modal-container">
         <div class="modal">
             <button id="cerrar-modal" class="btn-close">Cerrar</button>
             <h3>Añadir clase</h3>
@@ -57,21 +57,31 @@
                 <input id="descInp" type="text" placeholder="Ej: Profe de la UTN. Clases para ingreso" maxlength="50">
 
                 <label for="duracion">Duración de la clase</label>
-                <select id="duracion"></select>
+                <select id="duracion">
+                    <option value="30">30 minutos</option>
+                    <option value="45">45 minutos</option>
+                    <option value="60" selected>1 hora</option>
+                    <option value="75">1 hora 15 minutos</option>
+                    <option value="90">1 hora 30 minutos</option>
+                    <option value="120">2 horas</option>
+                </select>
 
-                <input type="checkbox" id="presencial" class="checkMod" checked/>
-                <label for="presencial">👥 Presencial</label>
-                
-                <input type="checkbox" id="virtual" class="checkMod" />
-                <label for="virtual">💻 Virtual</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-group-title">Modalidad de clase</div>
+                    <div class="checkbox-options">
+                        <input type="checkbox" id="presencial" class="checkMod" checked/>
+                        <label for="presencial">👥 Presencial</label>
+                        
+                        <input type="checkbox" id="virtual" class="checkMod" />
+                        <label for="virtual">💻 Virtual</label>
+                    </div>
+                </div>
 
-                <button class="btn" id="btn-guardar" type="submit">Guardar clase</button>
+                <button class="btn" id="btn-guardar" type="button">Guardar clase</button>
             </form>
-         </div>
-     </section>
+        </div>
+    </section>
 
-
-
+    <script src="./scripts/scriptProfes.js"></script>
 </body>
-</html> 
-<script src="./scripts/scriptProfes.js"></script>
+</html>

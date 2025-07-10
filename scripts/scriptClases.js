@@ -6,7 +6,7 @@ const btnBuscar = document.getElementById("btnBuscar")
 const provinciasArr = ["Mendoza","Buenos Aires"]
 const resultadosSect = document.getElementById("resultados")
 
-const createSearch = async () => {
+const createSearch = () => {
     const search = {
         provincia: selectProv.value,
         materia: inpMateria.value.toLowerCase().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
@@ -14,8 +14,8 @@ const createSearch = async () => {
         virtual: checkVirtual.checked
     }
     try {
-        const response = await fetch("clasesCreadas.json");
-        const clases = await response.json();
+        const clases = JSON.parse(localStorage.getItem("clases")) || [];
+
 
         const coincidencias = clases.filter((clase) => {
             return (
