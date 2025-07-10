@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Ver Clases</title>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./clases.html">Clases</a></li>
-                <li><a href="./registrarse">Registrarse como profe</a></li>
-                <li><a href="./iniciar_sesion">Iniciar Sesión</a></li>
+                <li class="nav"><a href="./index.html">Inicio</a></li>
+                <li class="nav"><a href="./clases.html">Clases</a></li>
+                <li class="nav"><a href="./profes.html">Soy profe</a></li>
             </ul>
         </nav>
     </header>
@@ -22,58 +22,44 @@
         <p>Selecciona la clase que desees, y contacta al profesor directamente.</p>
         <form action="">
             <fieldset id="fieldset">
-                <legend>Buscar clase</legend>
-                <label for="materia">Materia:</label>
-                <input required type="text" id="materia" name="materia" placeholder="Ej: Física" size="30">
+                <legend>🔍 Buscar clase</legend>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="inpMateria">📚 Materia que necesitas:</label>
+                        <input required type="text" id="inpMateria" name="materia" placeholder="Ej: Física, Matemáticas, Inglés..." size="30">
+                    </div>
 
-                <label for="provincia">Provincia:</label>
-                <select name="provincia" id="provincia">
-                    <option value="Buenos Aires">Buenos Aires</option>
-                    <option value="CABA">Ciudad Autónoma de Buenos Aires</option>
-                    <option value="Catamarca">Catamarca</option>
-                    <option value="Chaco">Chaco</option>
-                    <option value="Chubut">Chubut</option>
-                    <option value="Córdoba">Córdoba</option>
-                    <option value="Corrientes">Corrientes</option>
-                    <option value="Entre Ríos">Entre Ríos</option>
-                    <option value="Formosa">Formosa</option>
-                    <option value="Jujuy">Jujuy</option>
-                    <option value="La Pampa">La Pampa</option>
-                    <option value="La Rioja">La Rioja</option>
-                    <option selected value="Mendoza">Mendoza</option>
-                    <option value="Misiones">Misiones</option>
-                    <option value="Neuquén">Neuquén</option>
-                </select>
+                    <div class="form-group">
+                        <label for="selectProvincia">📍 Ubicación:</label>
+                        <select name="provincia" id="selectProvincia">
+                            <option value="Buenos Aires">Buenos Aires</option>
+                            <option selected value="Mendoza">Mendoza</option>
+                        </select>
+                    </div>
+                </div>
 
-                <label for="presencial">Presencial</label>
-                <input type="checkbox" id="presencial" name="mod" checked value="presencial">
+                <div class="checkbox-group">
+                    <div class="checkbox-group-title">Modalidad de clase preferida:</div>
+                    <div class="checkbox-options">
+                        <input type="checkbox" id="presencial" class="checkMod" checked/>
+                        <label for="presencial">👥 Presencial</label>
+                        
+                        <input type="checkbox" id="virtual" class="checkMod" />
+                        <label for="virtual">💻 Virtual</label>
+                    </div>
+                </div>
 
-                <label for="virtual">Virtual</label>
-                <input type="checkbox" id="virtual" name="mod" value="virtual">
-
-                <button type="submit">Buscar</button>
+                <div class="button-container">
+                    <button id="btnBuscar" type="button">
+                        <i class="fa fa-search"></i> Buscar Clases
+                    </button>
+                </div>
             </fieldset>
         </form>
     </section>
-    <section>
-        <h3>Resultados de la busqueda:</h3>
-        <ul>
-            <li class="clase">
-                <h4>Física - Presencial</h4>
-                <p>Profesor: Juan Pérez</p>
-                <p>Provincia: Mendoza</p>
-                <p>$8.000</p>
-                <p>Duracion: 1 hora 30 min</p>
-                <a href="https://wa.me/5492612345678" target="_blank">Contactar por WhatsApp</a>
-            </li>
-            <li class="clase">
-                <h4>Matemáticas - Virtual</h4>
-                <p>Profesora: Ana Gómez</p>
-                <p>Provincia: Mendoza</p>
-                <p>$10.000</p>
-                <p>Duracion: 1 hora</p>
-                <a href="https://wa.me/5492612345678" target="_blank">Contactar por WhatsApp</a>
-            </li>
+    <section id="resultados">
     </section>
 </body>
 </html>
+<script src="./scripts/scriptClases.js"></script>

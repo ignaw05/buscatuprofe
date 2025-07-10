@@ -7,70 +7,48 @@
     <link rel="stylesheet" href="./css/style.css"/>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./clases.html">Clases</a></li>
-                <li><a href="./registrarse">Registrarse como profe</a></li>
-                <li><a href="./iniciar_sesion">Iniciar Sesión</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <h3>Si sos profe, registrate para ofrecer tus clases</h3>
-        <a href="./registrarse">Registrarse</a>
-        <hr>
     </section>
-    <section>
-        <h1>Busca tu profe</h1>
-        <p>Conectá con tu profe ideal en segundos. Buscá clases y escribí directo por WhatsApp.</p>
-    </section>
-    <section>
-        <h2>¿Cómo funciona?</h2>
-        <ol>
-            <li>Buscá la clase que necesites.</li>
-            <li>Contacta a tu profe por WhatsApp.</li>
-            <li>¡Listo! Comenzá a aprender.</li>
-        </ol>
-    </section>
-    <section>
-        <form action="">
-            <fieldset id="fieldset">
-                <legend>Buscar clase</legend>
-                <label for="materia">Materia:</label>
-                <input required type="text" id="materia" name="materia" placeholder="Ej: Física" size="30">
+    <div id="home-page" class="page active">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Encontrá tu profe ideal</h1>
+                <p>Conectamos estudiantes con los mejores profesores particulares de manera directa y sencilla</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        Buscar Clase
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Soy Profe
+                    </button>
+                </div>
+            </div>
+        </header>
 
-                <label for="provincia">Provincia:</label>
-                <select name="provincia" id="provincia">
-                    <option value="Buenos Aires">Buenos Aires</option>
-                    <option value="CABA">Ciudad Autónoma de Buenos Aires</option>
-                    <option value="Catamarca">Catamarca</option>
-                    <option value="Chaco">Chaco</option>
-                    <option value="Chubut">Chubut</option>
-                    <option value="Córdoba">Córdoba</option>
-                    <option value="Corrientes">Corrientes</option>
-                    <option value="Entre Ríos">Entre Ríos</option>
-                    <option value="Formosa">Formosa</option>
-                    <option value="Jujuy">Jujuy</option>
-                    <option value="La Pampa">La Pampa</option>
-                    <option value="La Rioja">La Rioja</option>
-                    <option selected value="Mendoza">Mendoza</option>
-                    <option value="Misiones">Misiones</option>
-                    <option value="Neuquén">Neuquén</option>
-                </select>
-
-                <label for="presencial">Presencial</label>
-                <input type="checkbox" id="presencial" name="mod" checked value="presencial">
-
-                <label for="virtual">Virtual</label>
-                <input type="checkbox" id="virtual" name="mod" value="virtual">
-
-                <button type="submit">Buscar</button>
-            </fieldset>
-        </form>
-    </section>
-    
-    
+        <section class="features">
+            <div class="container">
+                <h2>¿Por qué elegirnos?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Simplicidad</h3>
+                        <p>Subi tus clases y los alumnos te contactarán via WhatsApp</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-laptop"></i>
+                        <h3>Clases Virtuales y Presenciales</h3>
+                        <p>Elige la modalidad que mejor se adapte a ti</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Rapidez</h3>
+                        <p>Si sos alumno no hace falta registrarse, busca directamente al profe que necesites!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
+<script src="./scripts/script.js"></script>

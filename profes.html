@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Panel del Profesor - BuscaTuProfe</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav"><a href="./index.html">Inicio</a></li>
+                <li class="nav"><a href="./clases.html">Clases</a></li>
+                <li class="nav"><a href="./profes.html">Soy profe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="professor-panel">
+        <div class="panel-header">
+            <h1>Mis Clases</h1>
+            <h2>Prof. Ignacio W.</h2>
+        </div>
+
+        <div class="panel-content">
+            <div class="classes-section">
+                <div class="section-header">
+                    <h3>Clases Registradas</h3>
+                    <button class="btn-add-class" onclick="showAddClassForm()">
+                        <i class="fa fa-plus"></i>
+                        Añadir Clase
+                    </button>
+                </div>
+
+                <div class="classes-grid" id="professor-classes">
+                    <!-- Las clases se cargarán dinámicamente aquí -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para añadir clase -->
+
+    <script src="./scripts/scriptProfes.js"></script>
+</body>
+</html> 
