@@ -22,17 +22,18 @@ const guardarClase = () => {
       alert("Completa todos los campos");
       return;
     }
+    const user = JSON.parse(localStorage.getItem('loggedUser'));
     
     const clase = {
-      provincia: "Mendoza",
+      provincia: user.ubicacion,
       materia: matInp.value,
       precio: priceInp.value,
       presencial: presencial.checked,
       virtual: virtual.checked,
       duracion: "1h",
-      profesor: "Ignacio W.",
+      profesor: user.nombre,
       descripcion: descInp.value,
-      telefono: "+5492612514127"
+      telefono: user.phone
     };
     
     // Obtener clases existentes del localStorage o crear un array vacío
@@ -101,6 +102,12 @@ const borrarClases = () => {
     localStorage.removeItem("clases");
     mostrarClases();
 }
+
+document.getElementById('logout-btn').addEventListener('click', () => {
+  localStorage.removeItem('loggedUser');
+  window.location.href = 'login.html';
+});
+
 
 btnAgregar.addEventListener("click",()=>{
     modalContainer.style.display = "flex";

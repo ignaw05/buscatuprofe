@@ -7,7 +7,7 @@ btnBuscarClase.addEventListener("click", function () {
 
 
 btnSoyProfe.addEventListener("click", function () {
-  window.location.href = 'profes.html'; // redirige a otra página
+  window.location.href = 'login.html'; // redirige a otra página
 });
 
 

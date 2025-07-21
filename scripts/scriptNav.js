@@ -16,13 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
+    const user = JSON.parse(localStorage.getItem('loggedUser'));
+
+  if (user) {
+    const nav = document.querySelector('nav');
+    const nombreSpan = document.createElement('span');
+    nombreSpan.textContent = ` | Bienvenido, ${user.nombre}`;
+    nav.appendChild(nombreSpan);
+  }
   });
   
-const user = JSON.parse(localStorage.getItem('loggedUser'));
 
-if (user) {
-  const nav = document.querySelector('nav');
-  const nombreSpan = document.createElement('span');
-  nombreSpan.textContent = ` | Bienvenido, ${user.name}`;
-  nav.appendChild(nombreSpan);
-}
