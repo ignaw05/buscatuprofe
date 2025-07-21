@@ -8,6 +8,7 @@ const descInp = document.getElementById("descInp")
 const presencial = document.getElementById("presencial")
 const virtual = document.getElementById("virtual")
 const clasesProf = document.getElementById("professor-classes")
+const panelHeader = document.querySelector("panel-header")
 
 //funciones
 const guardarClase = () => {
@@ -49,9 +50,11 @@ const guardarClase = () => {
   }
 
 const mostrarClases = () => {
+    const user = JSON.parse(localStorage.getItem('loggedUser'));
+
     const clasesGuardadas = JSON.parse(localStorage.getItem("clases")) || [];
     // Filtrar solo las clases del profesor actual
-    const clasesDelProfesor = clasesGuardadas.filter(clase => clase.profesor === "Ignacio W.");
+    const clasesDelProfesor = clasesGuardadas.filter(clase => clase.profesor === user.nombre);
 
     // Limpiar el contenedor antes de mostrar
     clasesProf.innerHTML = "";

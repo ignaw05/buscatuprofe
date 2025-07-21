@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - BuscaTuProfe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav"><a href="./index.html">Inicio</a></li>
+                <li class="nav"><a href="./clases.html">Clases</a></li>
+                <li class="nav"><a href="#" id="soy-profe-link">Soy profe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <div style="max-width: 500px; margin: 0 auto;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Registrate como profe</h1>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem;">Crea tu cuenta y publicá tus clases</p>
+                
+                <form id="registerForm" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <fieldset>
+                        <legend>Registrarse</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">
+                                    <i class="fas fa-user"></i> Nombre y Apellido
+                                </label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Ej. Homero Simpson" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selectProvincia">📍 Ubicación:</label>
+                            <select name="provincia" id="selectProvincia">
+                                <option value="Buenos Aires">Buenos Aires</option>
+                                <option selected value="Mendoza">Mendoza</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="Ej. homerojsimpson@gmail.com" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">
+                                    <i class="fas fa-lock"></i> Contraseña
+                                </label>
+                                <input type="password" id="password" name="password" minlength="8">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">
+                                    <i class="fas fa-lock"></i> Confirmar Contraseña
+                                </label>
+                                <input type="password" id="confirmPassword" minlength="8" name="confirmPassword"  required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i> Número de Teléfono (con +549)
+                            </label>
+                            <input type="tel" id="phone" name="phone" value="+549" required maxlength="14">
+                        </div>
+
+                        <div class="button-container">
+                            <button type="submit" id="btn-crear-cuenta">
+                                <i class="fas fa-user-plus"></i>
+                                Crear Cuenta
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <p style="color: rgba(255, 255, 255, 0.9);">
+                        ¿Ya tenes cuenta? 
+                        <a href="login.html" class="btn btn-secondary" style="display: inline-flex; margin-left: 0.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Iniciar Sesión
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/scriptRegister.js"></script>
+    <script src="scripts/scriptNav.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BuscaTuProfe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav"><a href="./index.html">Inicio</a></li>
+                <li class="nav"><a href="./clases.html">Clases</a></li>
+                <li class="nav"><a href="#" id="soy-profe-link">Soy profe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <div style="max-width: 400px; margin: 0 auto;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">¡Bienvenido profe!</h1>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem;">Inicia sesión para ver tus clases</p>
+                
+                <form id="loginForm" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <fieldset>
+                        <legend>Iniciar Sesión</legend>
+                        
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="Ej. alberteinstein@gmail.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">
+                                <i class="fas fa-lock"></i> Password
+                            </label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+
+                        <div class="form-group" style="flex-direction: row; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="remember" name="remember" style="width: auto; margin: 0;">
+                            <label for="remember" style="margin: 0; font-weight: normal;">Recordarme</label>
+                        </div>
+
+                        <div class="button-container">
+                            <button type="submit">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Iniciar Sesión
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem;">
+                        <a href="#" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">¿Olvidaste tu contraseña?</a>
+                    </p>
+                    <p style="color: rgba(255, 255, 255, 0.9);">
+                        ¿No tenes cuenta? 
+                        <a href="register.html" class="btn btn-secondary" style="display: inline-flex; margin-left: 0.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">
+                            <i class="fas fa-user-plus"></i>
+                            Crear Cuenta
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/scriptLogin.js"></script>
+    <script src="scripts/scriptNav.js"></script>
+
+</body>
+</html>
