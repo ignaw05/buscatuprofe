@@ -9,6 +9,13 @@ const presencial = document.getElementById("presencial")
 const virtual = document.getElementById("virtual")
 const clasesProf = document.getElementById("professor-classes")
 const panelHeader = document.querySelector("panel-header")
+const charCount = document.getElementById("char-count");
+
+// Actualizar el contador de caracteres al escribir en el campo de descripción
+descInp.addEventListener("input", ()=>{
+  charCount.textContent = `${descInp.value.length}/${descInp.maxLength}`;
+})
+
 
 //funciones
 const guardarClase = () => {

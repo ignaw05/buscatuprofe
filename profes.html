@@ -21,7 +21,8 @@
 
     <section class="professor-panel">
         <div class="panel-header">
-            <button id="logout-btn">Cerrar sesion</button>
+            <h1 style="color:aliceblue">Hola Profe!</h1>
+            <button id="logout-btn" class="btn-cerrar">Cerrar sesion</button>
         </div>
 
         <div class="panel-content">
@@ -61,8 +62,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="descInp">Descripción (Max 50 caracteres)</label>
-                    <input id="descInp" type="text" placeholder="Ej: Profe de la UTN. Clases para ingreso" maxlength="50">
+                    <label for="descInp">Descripción (Max 75 caracteres)</label>
+                    <input id="descInp" type="text" placeholder="Ej: Profe de la UTN. Clases para ingreso" maxlength="75">
+                    <p id="char-count">0/75</p>
                 </div>
 
                 <div class="form-group">

@@ -1171,6 +1171,28 @@ select:focus,
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
 }
+.btn-cerrar {
+  position: relative; /* Ya no absoluto */
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem; /* Tamaño más amigable para botones */
+  border-radius: 0.5rem; /* Esquinas redondeadas pero no circular */
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem auto 0; /* Auto centrado horizontal y espacio arriba */
+  display: block;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+  width: fit-content;
+}
+
+.btn-cerrar:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
 
 /* Form Styles inside Modal */
 #agregarClase {
