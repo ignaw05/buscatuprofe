@@ -78,27 +78,27 @@ const mostrarClases = () => {
       claseDiv.innerHTML = `
       <div class="clase-header">
         <div>
-            <h4 class="clase-titulo">${clase.materia}</h4>
+        <h4 class="clase-titulo">${clase.materia}</h4>
+        <span class="price-amount">Profe ${clase.profesor}</span>
         </div>
         <div class="clase-price">
-            <span class="price-amount">$${clase.precio}</span>
-            <span class="price-period">por clase</span>
+        <span class="price-amount">$${clase.precio}</span>
+        <span class="price-period">por clase</span>
         </div>
-    </div>
-    <div class="clase-description">
-        <p>${clase.descripcion}</p>
-    </div>
-    <div class="clase-details">
-
-        <div class="detail-item">
-            <i class="fa fa-clock-o"></i>
-            <span>Duración: ${clase.duracion}</span>
-        </div>
-        <div class="clase-modality">
-            ${clase.presencial ? '<span class="modality-tag modality-presencial">Presencial</span>' : ''}
-            ${clase.virtual ? '<span class="modality-tag modality-virtual">Virtual</span>' : ''}
-        </div>
-    </div>
+      </div>
+      <div class="clase-description">
+          <p>${clase.descripcion}</p>
+      </div>
+      <div class="clase-details">
+          <div class="detail-item">
+          <i class="fa fa-clock-o"></i>
+          <span>Duración: ${clase.duracion}</span>
+          </div>
+          <div class="clase-modality">
+          ${clase.presencial ? '<span class="modality-tag modality-presencial">Presencial</span>' : ''}
+          ${clase.virtual ? '<span class="modality-tag modality-virtual">Virtual</span>' : ''}
+          </div>
+      </div>
       `;
       clasesProf.appendChild(claseDiv);
     });
@@ -123,7 +123,6 @@ btnAgregar.addEventListener("click",()=>{
 
 btnCerrar.addEventListener("click",()=>{
     modalContainer.style.display = "none";
-    borrarClases()
 })
 
 btnGuardar.addEventListener("click",guardarClase)
